@@ -60,13 +60,12 @@ router.post("/api/new-joke", async (req, res, next) => {
         newJokes,
       });
     } else {
-      const newJoke = await Joke.create(req.body);
+      const newJoke = await Joke.create(data);
       res
         .status(201)
         .json({ message: "Blague ajoutée avec succès !", newJoke });
     }
   } catch (err) {
-    console.log("pas cool");
     next(err);
   }
 });
