@@ -9,14 +9,15 @@ Dans ce lmini-projet, nous pouvons :
 - Consulter une blague grâce à son id : /api/joke/(id)
 - Consulter une blague aléatoirement (depuis le front-end) : /api/random-joke
 
-Stack technique : 
+# Stack technique : 
 
-Backend : Node.js + Express
-ORM : Sequelize
-Base de Données : SQLite
-Déploiement : Render
-Documentation : Swagger (accessible à l'adresse https://carambar-server.onrender.com/api-docs)
-Port local : 3310
+- Backend : Node.js + Express
+- ORM : Sequelize
+- Base de Données : SQLite
+- Déploiement : Render
+- Documentation : Swagger (accessible à l'adresse https://carambar-server.onrender.com/api-docs)
+- Port local : 3310
+
 
 
 Le serveur est est accessible via : 
