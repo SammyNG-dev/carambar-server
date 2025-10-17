@@ -25,7 +25,6 @@ import Joke from "./models/Joke.js";
  *         text: "Pourquoi les carambars sont-ils drôles ? Parce qu'ils ont du sucre dans les veines."
  */
 
-
 const router = express.Router();
 
 /**
@@ -33,7 +32,7 @@ const router = express.Router();
  * /api/new-joke:
  *   post:
  *     summary: Ajoute une nouvelle blague
- *     description: Permet d'ajouter une blague à la base de données.
+ *     description: Permet d'ajouter une ou des blagues à la base de données.
  *     requestBody:
  *       required: true
  *       content:
@@ -51,13 +50,23 @@ const router = express.Router();
  *         description: Requête invalide
  */
 
-
 router.post("/api/new-joke", async (req, res, next) => {
+  const data = req.body;
   try {
-    const { text } = req.body;
-    const newJoke = await Joke.create({ text });
-    res.status(201).json(newJoke);
+    if (Array.isArray(data)) {
+      const newJokes = await Joke.bulkCreate(data);
+      res.status(201).json({
+        message: `${newJokes.length} blagues ajoutées avec succès`,
+        newJokes,
+      });
+    } else {
+      const newJoke = await Joke.create({ data });
+      res
+        .status(201)
+        .json({ message: "Blague ajoutée avec succès !", newJoke });
+    }
   } catch (err) {
+    console.log("pas cool");
     next(err);
   }
 });
@@ -143,7 +152,6 @@ router.get("/api/joke/:id", async (req, res, next) => {
  *       404:
  *         description: Aucune blague disponible
  */
-
 
 router.get("/api/random-joke", async (_req, res, next) => {
   try {
