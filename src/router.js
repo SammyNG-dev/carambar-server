@@ -31,7 +31,7 @@ const router = express.Router();
  * @swagger
  * /api/new-joke:
  *   post:
- *     summary: Ajoute une nouvelle blague
+ *     summary: Ajoute une ou plusieurs nouvelles blagues
  *     description: Permet d'ajouter une ou des blagues à la base de données.
  *     requestBody:
  *       required: true
