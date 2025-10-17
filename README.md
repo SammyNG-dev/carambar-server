@@ -1,8 +1,13 @@
 # Mini-projet Blagues Carambar
 
-Ce projet à pour but d'être un serveur de blagues carambar. 
+Ceci est un projet de sélection pour la formation Concepteur Développeur d'Applications DevOps de la Wild Code School débutant le 16 mars 2026.
 
-Dans ce lmini-projet, nous pouvons :
+Ce projet à pour but d'être un serveur de blagues carambar.
+
+URL du site : https://sammyng-dev.github.io/carambar-client
+URL du dépôt GitHub du client : https://github.com/SammyNG-dev/carambar-client
+
+Dans ce mini-projet, nous pouvons : 
 
 - Ajouter une blague (via Postman) : /api/new-joke
 - Consulter toutes les blagues : /api/jokes/
@@ -18,9 +23,7 @@ Dans ce lmini-projet, nous pouvons :
 - Documentation : Swagger (accessible à l'adresse https://carambar-server.onrender.com/api-docs)
 - Port local : 3310
 
-
-
-Le serveur est est accessible via : 
+Le serveur est est accessible à cette adresse : https://carambar-server.onrender.com 
 
 # Voir le code :
 
